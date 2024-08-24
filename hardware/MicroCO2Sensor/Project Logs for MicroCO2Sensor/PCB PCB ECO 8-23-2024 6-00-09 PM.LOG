@@ -1,0 +1,49 @@
+Removed Pin From Net: NetName=NetC4_1 Pin=Y?-1
+Removed Pin From Net: NetName=GND Pin=Y?-2
+Removed Pin From Net: NetName=NetC5_2 Pin=Y?-3
+Removed Pin From Net: NetName=GND Pin=Y?-4
+Removed Member From Class: ClassName=U_RP2354A Member=Y?
+Added Component: Designator=Y1(FP-ABM10AIG-MFG)
+Added Component: Designator=Y2(FP-ABM10AIG-MFG)
+Add component (AddParameter): Name = "Case/Package"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ESR (Equivalent Series Resistance)"; Value = "150R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "12MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Stability"; Value = "50ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Tolerance"; Value = "30ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.024inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "0.098inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Load Capacitance"; Value = "10pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "AEC-Q200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.079inch"; VariantName = "[No Variations]"
+Added Component: Designator=Y3(FP-ABM10-MFG)
+Add component (AddParameter): Name = "Case/Package"; Value = "CSMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ESR (Equivalent Series Resistance)"; Value = "100R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "25MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Stability"; Value = "20ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency Tolerance"; Value = "20ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.02inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "2.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Load Capacitance"; Value = "10pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "70°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-20°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Frequency"; Value = "25 MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "ABM10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series Resistance"; Value = "100R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20ppm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "2mm"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=U_RP2354A Member=Component Y1 ABM10AIG-12.000MHZ-2Z-T
+Added Member To Class: ClassName=U_RP2354A Member=Component Y2 ABM10AIG-12.000MHZ-4Z-T3
+Added Member To Class: ClassName=U_RP2354A Member=Component Y3 ABM10-25.000MHZ-E20-T

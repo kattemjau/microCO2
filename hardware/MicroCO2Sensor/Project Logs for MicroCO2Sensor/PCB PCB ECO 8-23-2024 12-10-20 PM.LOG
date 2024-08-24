@@ -1,0 +1,84 @@
+Removed Pin From Net: NetName=GND Pin=U1-1
+Removed Pin From Net: NetName=GND Pin=U1-3
+Removed Pin From Net: NetName=GND Pin=U1-5
+Removed Pin From Net: NetName=P3V3 Pin=U1-6
+Removed Pin From Net: NetName=GND Pin=U1-9
+Removed Pin From Net: NetName=GND Pin=U1-11
+Removed Pin From Net: NetName=GND Pin=U1-13
+Added Component: Designator=P?(632712000011)
+Add component (AddParameter): Name = "Connector Type"; Value = "USB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "Gold, Nickel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "30mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "5A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Insulation Resistance"; Value = "1GO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "105°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-25°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Horizontal, Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "68112673"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Contacts"; Value = "22"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "22"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Horizontal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "USB Standard"; Value = "USB 3.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "20V"; VariantName = "[No Variations]"
+Added Component: Designator=R?(R0201)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "0201"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2017-11-09"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Chip Res 5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "R0201-0R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "00000003245"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2014-11-13"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0R"; VariantName = "[No Variations]"
+Added Component: Designator=U?(STC31-C)
+Added Pin To Net: NetName=GND Pin=P?-A1
+Added Pin To Net: NetName=GND Pin=P?-A12
+Added Pin To Net: NetName=GND Pin=P?-B1
+Added Pin To Net: NetName=GND Pin=P?-B12
+Added Pin To Net: NetName=GND Pin=P?-Shell
+Added Pin To Net: NetName=GND Pin=P?-Shell
+Added Pin To Net: NetName=GND Pin=P?-Shell
+Added Pin To Net: NetName=GND Pin=P?-Shell
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=GND Pin=U?-1
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=GND Pin=U?-5
+Added Pin To Net: NetName=P3V3 Pin=U?-6
+Added Pin To Net: NetName=GND Pin=U?-9
+Added Pin To Net: NetName=GND Pin=U?-11
+Added Pin To Net: NetName=GND Pin=U?-13
+Added Pin To Net: NetName=NetP?_A5 Pin=P?-A5
+Added Pin To Net: NetName=NetP?_A5 Pin=R?-2
+Added Net: Name=NetP?_A5
+Added Pin To Net: NetName=NetP?_A6 Pin=P?-A6
+Added Net: Name=NetP?_A6
+Added Pin To Net: NetName=NetP?_A7 Pin=P?-A7
+Added Net: Name=NetP?_A7
+Added Pin To Net: NetName=NetU?_4 Pin=U?-4
+Added Net: Name=NetU?_4
+Added Pin To Net: NetName=NetU?_7 Pin=U?-7
+Added Net: Name=NetU?_7
+Added Pin To Net: NetName=VBUS Pin=P?-A4
+Added Pin To Net: NetName=VBUS Pin=P?-A9
+Added Pin To Net: NetName=VBUS Pin=P?-B4
+Added Pin To Net: NetName=VBUS Pin=P?-B9
+Added Net: Name=VBUS
+Added Class: Name=U_CO2Sensor
+Added Class: Name=U_USBC
+Added Rule: Name=Schematic Supply Nets_2

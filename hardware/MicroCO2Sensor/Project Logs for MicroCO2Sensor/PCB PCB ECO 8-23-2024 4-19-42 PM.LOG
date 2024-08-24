@@ -1,0 +1,13 @@
+Added Component: Designator=U3(RP2354A)
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-1
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-11
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-30
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-38
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-45
+Added Pin To Net: NetName=NetU3_1,11,30,38,45,20 Pin=U3-20
+Added Net: Name=NetU3_1,11,30,38,45,20
+Added Pin To Net: NetName=NetU3_6,23,39 Pin=U3-6
+Added Pin To Net: NetName=NetU3_6,23,39 Pin=U3-23
+Added Pin To Net: NetName=NetU3_6,23,39 Pin=U3-39
+Added Net: Name=NetU3_6,23,39
+Added Member To Class: ClassName=Main Member=Component U3 RP2354A

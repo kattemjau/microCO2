@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=Main.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Main.SchDoc|Designator=U_CO2Sensor|SchDesignator=U_CO2Sensor|FileName=CO2Sensor.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=CO2Sensor.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Main.SchDoc|Designator=U_LED|SchDesignator=U_LED|FileName=LED.SchDoc|SheetNumber=5|SymbolType=Normal|RawFileName=LED.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Main.SchDoc|Designator=U_RP2354A|SchDesignator=U_RP2354A|FileName=RP2354A.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=RP2354A.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Main.SchDoc|Designator=U_USBC|SchDesignator=U_USBC|FileName=USBC.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=USBC.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

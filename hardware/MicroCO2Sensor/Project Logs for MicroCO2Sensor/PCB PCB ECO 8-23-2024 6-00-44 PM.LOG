@@ -1,0 +1,6 @@
+Removed Member From Class: ClassName=U_RP2354A Member=Y2
+Removed Member From Class: ClassName=U_RP2354A Member=Y3
+Added Pin To Net: NetName=NetC4_1 Pin=Y1-1
+Added Pin To Net: NetName=GND Pin=Y1-2
+Added Pin To Net: NetName=NetC5_2 Pin=Y1-3
+Added Pin To Net: NetName=GND Pin=Y1-4
