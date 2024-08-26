@@ -1,5 +1,6 @@
 # MicroCO2 Sensor
 Inspired from https://github.com/nup002/miniCO2
+
 This is a smaller version using a USB-C connector, paired with a tiny CO2 sensor and the new RPI pico chip (RP2354A)
 
 The MicroCO2 is a miniature USB-powered CO2 sensor that can be used 
