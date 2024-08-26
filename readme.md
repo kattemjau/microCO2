@@ -6,7 +6,7 @@ The MicroCO2 is a miniature USB-powered CO2 sensor that can be used
 anywhere you need a simple indicator of CO2. Its built-in LEDs light up green, orange, or red, depending on the 
 amount of CO2 in the air. The default levels can be adjusted via software to suit your needs.
 <p align="center">
-<img src="Images/PCB_2024-Aug-26_07-50-34PM-000_CustomizedView30873973979.png" style="clip-path: inset(50% 50% 50% 50%); width: 1000px;">
+<img src="Images/PCB_2024-Aug-26_07-50-34PM-000_CustomizedView30873973979.png" style="transform: scale(2); clip-path: inset(50% 50% 50% 50%); width: 1000px;">
 </p>
  
 ## Compatibility
