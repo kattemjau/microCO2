@@ -7,6 +7,7 @@ anywhere you need a simple indicator of CO2. Its built-in LEDs light up green, o
 amount of CO2 in the air. The default levels can be adjusted via software to suit your needs.
 <p align="center">
 <img src="Images/Resize image project-1.png" width="500">
+<img src="Images/Resize image project-5.png" width="500">
 </p>
  
 ## Compatibility
