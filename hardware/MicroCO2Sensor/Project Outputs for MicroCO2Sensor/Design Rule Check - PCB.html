@@ -1,0 +1,684 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">8/31/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4:17:39 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc" class="file"><acronym title="C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc">C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">112</td></tr>
+</table>
+</td>
+</table><a name="IDL34P5D4R41U4ILSNCPI554AJ2K5BXEZTDQJO3ZEEWUJ5SR53KIQC"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPRMXYHYSOR5CCZ3RD4MVQMRJ5OAWY32XAAKJITB3HNP3TREXOAHF">Clearance Constraint (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEC4MKC1I5Q4MLSFW5SUQERTKFC34LGTW1IPS3VPQSFM30OQBXQ1F">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXFXZVMJ01NHRP3AOJL3U323K4JDFWVCD00X2G4NBXQGCQTZIA44">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ3FR5AW4CXVDDYRITT3BAVIZQEXFMIIU4QQDOZPQN5AKXPJ1SGGD">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMA4WCG1VJGUOHRYSSDZI2MBSZLGDBXDJSZ4LEXERNC4GNXDPLB3I">Width Constraint (Min=0.081mm) (Max=1mm) (Preferred=0.15mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLEGIEYIARPF0CZSVSS2YN2W1YEVQ32GURBVQFDPYIDHNJWWVYWKI">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMP2DI5GM4HAMLAZJ4ASBRASSK5OPJRQRYXTXILTGA2PDJ2Y0PEG">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNet('NetC11_2'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMZIP0XJ2TEQQCO0RWA0NKBIWCL50NDFNCIU5KYHGTE4Y1HGVQULN">Minimum Annular Ring (Minimum=0.076mm) (IsVia)</a></td>
+<td class="column2">97</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMEY2MY1TOZRUCQV4YUPAO15CPJWUMDVKAAEKX2BFYGX3W3LXZSIK">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (Disabled)(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2554HT3W1QUPFHZ0JFONLCKLOJQSZ512FZRBNFGICQJGEZYXTLVN">Hole To Hole Clearance (Gap=0.254mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY4WT4Q52C0UKO1XV305OYMK2UBSKXL5ARD2X2YF4KPGZJPFLABGN">Minimum Solder Mask Sliver (Gap=0.254mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFEY4V454XDBZNDZ1WAVN4YHPPKI1FYIHXYV4WQL5RNYD5CNSUQSH">Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBDSZLH32HUKLPDEXOFYZSMTFQLR5IEWENDSAEPPBOCJBI41RPL1L">Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBM1LPBVXFKHCKKEP2DJ3Y2MGVDVTPNFDQCXHHWPMFTUZ0T5BWPIF">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB0AYFKWDA24UGM31N5XOHGRDNK4IAKAXR0FMS4BMO51H1JG0Q24G">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">15</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDS022IKMDO2NCEG14AQEJBSHKUCD3WV1ZAEMWMNMCNOBSGZ532EYB">Matched Lengths(Tolerance=1mm) (InDifferentialPair('USB'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLIHW3YCFJFC5PML3IRVI0FEE0G0GYMDQZVRKP1H0P32EKJK3WYJD">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">112</td>
+</tr>
+</table><br><a name="IDMZIP0XJ2TEQQCO0RWA0NKBIWCL50NDFNCIU5KYHGTE4Y1HGVQULN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=0.076mm) (IsVia)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3345.806mil|Location2.Y=3350.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3345.806mil|Location2.Y=3350.056mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,84.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3404.861mil|Location2.Y=3409.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3404.861mil|Location2.Y=3409.111mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,86.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3404.861mil|Location2.Y=3409.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3404.861mil|Location2.Y=3409.111mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,86.45mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3444.232mil|Location2.Y=3448.482mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3444.232mil|Location2.Y=3448.482mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,87.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3463.917mil|Location2.Y=3468.167mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3463.917mil|Location2.Y=3468.167mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,87.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3483.602mil|Location2.Y=3487.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3483.602mil|Location2.Y=3487.852mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,88.45mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3503.287mil|Location2.Y=3507.537mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3503.287mil|Location2.Y=3507.537mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,88.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3503.287mil|Location2.Y=3507.537mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3503.287mil|Location2.Y=3507.537mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,88.95mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3562.342mil|Location2.Y=3566.592mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1708.119mil|Location2.X=1712.369mil|Location1.Y=3562.342mil|Location2.Y=3566.592mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.44mm,90.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1706.536mil|Location2.X=1710.786mil|Location1.Y=3595.808mil|Location2.Y=3600.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1706.536mil|Location2.X=1710.786mil|Location1.Y=3595.808mil|Location2.Y=3600.058mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.4mm,91.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1706.536mil|Location2.X=1710.786mil|Location1.Y=3615.493mil|Location2.Y=3619.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1706.536mil|Location2.X=1710.786mil|Location1.Y=3615.493mil|Location2.Y=3619.743mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.4mm,91.8mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.473mil|Location2.X=1714.723mil|Location1.Y=3292.658mil|Location2.Y=3296.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.473mil|Location2.X=1714.723mil|Location1.Y=3292.658mil|Location2.Y=3296.908mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.5mm,83.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.473mil|Location2.X=1714.723mil|Location1.Y=3312.343mil|Location2.Y=3316.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.473mil|Location2.X=1714.723mil|Location1.Y=3312.343mil|Location2.Y=3316.593mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.5mm,84.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1718.318mil|Location2.X=1722.568mil|Location1.Y=3424.78mil|Location2.Y=3429.03mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1718.318mil|Location2.X=1722.568mil|Location1.Y=3424.78mil|Location2.Y=3429.03mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.699mm,86.956mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.222mil|Location2.X=1730.472mil|Location1.Y=3595.808mil|Location2.Y=3600.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.222mil|Location2.X=1730.472mil|Location1.Y=3595.808mil|Location2.Y=3600.058mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.9mm,91.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.222mil|Location2.X=1730.472mil|Location1.Y=3615.493mil|Location2.Y=3619.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1726.222mil|Location2.X=1730.472mil|Location1.Y=3615.493mil|Location2.Y=3619.743mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (43.9mm,91.8mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1759.686mil|Location2.X=1763.936mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1759.686mil|Location2.X=1763.936mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.75mm,91.215mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1764.607mil|Location2.X=1768.857mil|Location1.Y=3285.769mil|Location2.Y=3290.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1764.607mil|Location2.X=1768.857mil|Location1.Y=3285.769mil|Location2.Y=3290.019mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.875mm,83.425mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1766.576mil|Location2.X=1770.826mil|Location1.Y=3485.572mil|Location2.Y=3489.822mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1766.576mil|Location2.X=1770.826mil|Location1.Y=3485.572mil|Location2.Y=3489.822mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.925mm,88.5mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3424.548mil|Location2.Y=3428.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3424.548mil|Location2.Y=3428.798mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.9mm,86.95mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3440.296mil|Location2.Y=3444.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3440.296mil|Location2.Y=3444.546mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.9mm,87.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3519.036mil|Location2.Y=3523.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3519.036mil|Location2.Y=3523.286mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.9mm,89.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1765.592mil|Location2.X=1769.842mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44.9mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.159mil|Location2.X=1734.409mil|Location1.Y=3292.658mil|Location2.Y=3296.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.159mil|Location2.X=1734.409mil|Location1.Y=3292.658mil|Location2.Y=3296.908mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44mm,83.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.159mil|Location2.X=1734.409mil|Location1.Y=3312.343mil|Location2.Y=3316.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1730.159mil|Location2.X=1734.409mil|Location1.Y=3312.343mil|Location2.Y=3316.593mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (44mm,84.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.371mil|Location2.X=1783.621mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.371mil|Location2.X=1783.621mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.25mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.371mil|Location2.X=1783.621mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1779.371mil|Location2.X=1783.621mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.229mil|Location2.X=1792.479mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.229mil|Location2.X=1792.479mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.475mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.229mil|Location2.X=1792.479mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1788.229mil|Location2.X=1792.479mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.475mm,90.325mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1789.214mil|Location2.X=1793.464mil|Location1.Y=3390.099mil|Location2.Y=3394.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1789.214mil|Location2.X=1793.464mil|Location1.Y=3390.099mil|Location2.Y=3394.349mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.5mm,86.075mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1799.056mil|Location2.X=1803.306mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1799.056mil|Location2.X=1803.306mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1803.977mil|Location2.X=1808.227mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1803.977mil|Location2.X=1808.227mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (45.875mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.836mil|Location2.X=1817.086mil|Location1.Y=3339.903mil|Location2.Y=3344.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1812.836mil|Location2.X=1817.086mil|Location1.Y=3339.903mil|Location2.Y=3344.153mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.1mm,84.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.741mil|Location2.X=1822.991mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1818.741mil|Location2.X=1822.991mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.725mil|Location2.X=1823.975mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1819.725mil|Location2.X=1823.975mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.275mm,90.325mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1836.978mil|Location2.X=1841.228mil|Location1.Y=3390.168mil|Location2.Y=3394.418mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1836.978mil|Location2.X=1841.228mil|Location1.Y=3390.168mil|Location2.Y=3394.418mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.713mm,86.077mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1838.426mil|Location2.X=1842.676mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1838.426mil|Location2.X=1842.676mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1847.758mil|Location2.X=1852.008mil|Location1.Y=3427.028mil|Location2.Y=3431.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1847.758mil|Location2.X=1852.008mil|Location1.Y=3427.028mil|Location2.Y=3431.278mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (46.987mm,87.013mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.111mil|Location2.X=1862.361mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.111mil|Location2.X=1862.361mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.25mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.111mil|Location2.X=1862.361mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1858.111mil|Location2.X=1862.361mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1866.969mil|Location2.X=1871.219mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1866.969mil|Location2.X=1871.219mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.475mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.807mil|Location2.X=1872.057mil|Location1.Y=3282.816mil|Location2.Y=3287.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.807mil|Location2.X=1872.057mil|Location1.Y=3282.816mil|Location2.Y=3287.066mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.496mm,83.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.954mil|Location2.X=1872.204mil|Location1.Y=3299.942mil|Location2.Y=3304.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.954mil|Location2.X=1872.204mil|Location1.Y=3299.942mil|Location2.Y=3304.192mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.5mm,83.785mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.954mil|Location2.X=1872.204mil|Location1.Y=3343.249mil|Location2.Y=3347.499mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1867.954mil|Location2.X=1872.204mil|Location1.Y=3343.249mil|Location2.Y=3347.499mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.5mm,84.885mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.843mil|Location2.X=1879.093mil|Location1.Y=3422.58mil|Location2.Y=3426.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.843mil|Location2.X=1879.093mil|Location1.Y=3422.58mil|Location2.Y=3426.83mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.675mm,86.9mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1877.796mil|Location2.X=1882.046mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1877.796mil|Location2.X=1882.046mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1882.718mil|Location2.X=1886.968mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1882.718mil|Location2.X=1886.968mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.875mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1882.718mil|Location2.X=1886.968mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1882.718mil|Location2.X=1886.968mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47.875mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3276.91mil|Location2.Y=3281.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3276.91mil|Location2.Y=3281.16mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47mm,83.2mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3299.942mil|Location2.Y=3304.192mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3299.942mil|Location2.Y=3304.192mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47mm,83.785mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1848.269mil|Location2.X=1852.519mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (47mm,88.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1897.481mil|Location2.X=1901.731mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1897.481mil|Location2.X=1901.731mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1898.466mil|Location2.X=1902.716mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1898.466mil|Location2.X=1902.716mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.275mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1898.466mil|Location2.X=1902.716mil|Location1.Y=3424.548mil|Location2.Y=3428.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1898.466mil|Location2.X=1902.716mil|Location1.Y=3424.548mil|Location2.Y=3428.798mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.275mm,86.95mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1895.513mil|Location2.X=1899.763mil|Location1.Y=3576.123mil|Location2.Y=3580.373mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1895.513mil|Location2.X=1899.763mil|Location1.Y=3576.123mil|Location2.Y=3580.373mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.2mm,90.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1899.45mil|Location2.X=1903.7mil|Location1.Y=3391.084mil|Location2.Y=3395.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1899.45mil|Location2.X=1903.7mil|Location1.Y=3391.084mil|Location2.Y=3395.334mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.3mm,86.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1899.45mil|Location2.X=1903.7mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1899.45mil|Location2.X=1903.7mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.3mm,88.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1911.261mil|Location2.X=1915.511mil|Location1.Y=3339.903mil|Location2.Y=3344.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1911.261mil|Location2.X=1915.511mil|Location1.Y=3339.903mil|Location2.Y=3344.153mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.6mm,84.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1917.166mil|Location2.X=1921.416mil|Location1.Y=3426.517mil|Location2.Y=3430.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1917.166mil|Location2.X=1921.416mil|Location1.Y=3426.517mil|Location2.Y=3430.767mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.75mm,87mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1917.166mil|Location2.X=1921.416mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1917.166mil|Location2.X=1921.416mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1923.072mil|Location2.X=1927.322mil|Location1.Y=3528.879mil|Location2.Y=3533.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1923.072mil|Location2.X=1927.322mil|Location1.Y=3528.879mil|Location2.Y=3533.129mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48.9mm,89.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1887.639mil|Location2.X=1891.889mil|Location1.Y=3276.91mil|Location2.Y=3281.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1887.639mil|Location2.X=1891.889mil|Location1.Y=3276.91mil|Location2.Y=3281.16mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48mm,83.2mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1887.639mil|Location2.X=1891.889mil|Location1.Y=3320.808mil|Location2.Y=3325.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1887.639mil|Location2.X=1891.889mil|Location1.Y=3320.808mil|Location2.Y=3325.058mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (48mm,84.315mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1929.962mil|Location2.X=1934.212mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1929.962mil|Location2.X=1934.212mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.075mm,83.575mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935.401mil|Location2.X=1939.651mil|Location1.Y=3592.765mil|Location2.Y=3597.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935.401mil|Location2.X=1939.651mil|Location1.Y=3592.765mil|Location2.Y=3597.015mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.213mm,91.223mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.851mil|Location2.X=1941.101mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.851mil|Location2.X=1941.101mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1945.71mil|Location2.X=1949.96mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1945.71mil|Location2.X=1949.96mil|Location1.Y=3291.674mil|Location2.Y=3295.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.475mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3391.084mil|Location2.Y=3395.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3391.084mil|Location2.Y=3395.334mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.4mm,86.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3422.58mil|Location2.Y=3426.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3422.58mil|Location2.Y=3426.83mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.4mm,86.9mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1942.757mil|Location2.X=1947.007mil|Location1.Y=3469.824mil|Location2.Y=3474.074mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.4mm,88.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1946.694mil|Location2.X=1950.944mil|Location1.Y=3324.155mil|Location2.Y=3328.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1946.694mil|Location2.X=1950.944mil|Location1.Y=3324.155mil|Location2.Y=3328.405mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.5mm,84.4mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1956.536mil|Location2.X=1960.786mil|Location1.Y=3544.627mil|Location2.Y=3548.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1956.536mil|Location2.X=1960.786mil|Location1.Y=3544.627mil|Location2.Y=3548.877mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.75mm,90mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1956.536mil|Location2.X=1960.786mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1956.536mil|Location2.X=1960.786mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (49.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1976.222mil|Location2.X=1980.472mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1976.222mil|Location2.X=1980.472mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (50.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1986.064mil|Location2.X=1990.314mil|Location1.Y=3324.154mil|Location2.Y=3328.404mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1986.064mil|Location2.X=1990.314mil|Location1.Y=3324.154mil|Location2.Y=3328.404mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (50.5mm,84.4mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1992.954mil|Location2.X=1997.204mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1992.954mil|Location2.X=1997.204mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (50.675mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1995.907mil|Location2.X=2000.157mil|Location1.Y=3426.517mil|Location2.Y=3430.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1995.907mil|Location2.X=2000.157mil|Location1.Y=3426.517mil|Location2.Y=3430.767mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (50.75mm,87mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1997.875mil|Location2.X=2002.125mil|Location1.Y=3517.068mil|Location2.Y=3521.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1997.875mil|Location2.X=2002.125mil|Location1.Y=3517.068mil|Location2.Y=3521.318mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (50.8mm,89.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2008.702mil|Location2.X=2012.952mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2008.702mil|Location2.X=2012.952mil|Location1.Y=3557.422mil|Location2.Y=3561.672mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.075mm,90.325mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2015.592mil|Location2.X=2019.842mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2015.592mil|Location2.X=2019.842mil|Location1.Y=3614.902mil|Location2.Y=3619.152mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3377.304mil|Location2.Y=3381.554mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3377.304mil|Location2.Y=3381.554mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,85.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3440.296mil|Location2.Y=3444.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3440.296mil|Location2.Y=3444.546mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,87.35mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3456.044mil|Location2.Y=3460.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3456.044mil|Location2.Y=3460.294mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,87.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3503.288mil|Location2.Y=3507.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3503.288mil|Location2.Y=3507.538mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,88.95mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3519.036mil|Location2.Y=3523.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3519.036mil|Location2.Y=3523.286mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,89.35mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2031.34mil|Location2.X=2035.59mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.65mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2035.277mil|Location2.X=2039.527mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2035.277mil|Location2.X=2039.527mil|Location1.Y=3592.462mil|Location2.Y=3596.712mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2033.308mil|Location2.X=2037.558mil|Location1.Y=3284.784mil|Location2.Y=3289.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2033.308mil|Location2.X=2037.558mil|Location1.Y=3284.784mil|Location2.Y=3289.034mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (51.7mm,83.4mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.993mil|Location2.X=2057.243mil|Location1.Y=3408.8mil|Location2.Y=3413.05mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.993mil|Location2.X=2057.243mil|Location1.Y=3408.8mil|Location2.Y=3413.05mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (52.2mm,86.55mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.993mil|Location2.X=2057.243mil|Location1.Y=3585.965mil|Location2.Y=3590.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2052.993mil|Location2.X=2057.243mil|Location1.Y=3585.965mil|Location2.Y=3590.215mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (52.2mm,91.05mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2056.93mil|Location2.X=2061.18mil|Location1.Y=3517.068mil|Location2.Y=3521.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2056.93mil|Location2.X=2061.18mil|Location1.Y=3517.068mil|Location2.Y=3521.318mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (52.3mm,89.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3298.564mil|Location2.Y=3302.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3298.564mil|Location2.Y=3302.814mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,83.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3357.619mil|Location2.Y=3361.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3357.619mil|Location2.Y=3361.869mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,85.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3416.674mil|Location2.Y=3420.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3416.674mil|Location2.Y=3420.924mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,86.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3475.729mil|Location2.Y=3479.979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3475.729mil|Location2.Y=3479.979mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,88.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3534.784mil|Location2.Y=3539.034mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3593.84mil|Location2.Y=3598.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2084.489mil|Location2.X=2088.739mil|Location1.Y=3593.84mil|Location2.Y=3598.09mil|Absolute=True">Minimum Annular Ring: (0.075mm &lt; 0.076mm) Via (53mm,91.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDB0AYFKWDA24UGM31N5XOHGRDNK4IAKAXR0FMS4BMO51H1JG0Q24G"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1815.378mil|Location2.X=1816.512mil|Location1.Y=3240.575mil|Location2.Y=3241.708mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1815.378mil|Location2.X=1816.512mil|Location1.Y=3240.575mil|Location2.Y=3241.708mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (46.125mm,82.325mm) on Top Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3296.677mil|Location2.Y=3297.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3296.677mil|Location2.Y=3297.811mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,83.75mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3355.733mil|Location2.Y=3356.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3355.733mil|Location2.Y=3356.866mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,85.25mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3414.788mil|Location2.Y=3415.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3414.788mil|Location2.Y=3415.921mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,86.75mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3473.843mil|Location2.Y=3474.976mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3473.843mil|Location2.Y=3474.976mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,88.25mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3532.898mil|Location2.Y=3534.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3532.898mil|Location2.Y=3534.031mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,89.75mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3591.953mil|Location2.Y=3593.086mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2117.43mil|Location2.X=2118.563mil|Location1.Y=3591.953mil|Location2.Y=3593.086mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Arc (53mm,91.25mm) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.007mil|Location2.X=2941.14mil|Location1.Y=4287.267mil|Location2.Y=4288.401mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2940.007mil|Location2.X=2941.14mil|Location1.Y=4287.267mil|Location2.Y=4288.401mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.213mil|Location2.X=1764.346mil|Location1.Y=3644.118mil|Location2.Y=3645.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1763.213mil|Location2.X=1764.346mil|Location1.Y=3644.118mil|Location2.Y=3645.252mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (44.8mm,92.4mm)(44.8mm,92.75mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.977mil|Location2.X=1779.11mil|Location1.Y=3651.008mil|Location2.Y=3652.141mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1777.977mil|Location2.X=1779.11mil|Location1.Y=3651.008mil|Location2.Y=3652.141mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (44.8mm,92.75mm)(45.55mm,92.75mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.741mil|Location2.X=1793.874mil|Location1.Y=3659.866mil|Location2.Y=3661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1792.741mil|Location2.X=1793.874mil|Location1.Y=3659.866mil|Location2.Y=3661mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (45.55mm,92.75mm)(45.55mm,93.2mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1826.205mil|Location2.X=1827.338mil|Location1.Y=3668.725mil|Location2.Y=3669.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1826.205mil|Location2.X=1827.338mil|Location1.Y=3668.725mil|Location2.Y=3669.858mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (45.55mm,93.2mm)(47.25mm,93.2mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.67mil|Location2.X=1860.803mil|Location1.Y=3659.866mil|Location2.Y=3661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1859.67mil|Location2.X=1860.803mil|Location1.Y=3659.866mil|Location2.Y=3661mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (47.25mm,92.75mm)(47.25mm,93.2mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.433mil|Location2.X=1875.567mil|Location1.Y=3651.008mil|Location2.Y=3652.141mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1874.433mil|Location2.X=1875.567mil|Location1.Y=3651.008mil|Location2.Y=3652.141mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (47.25mm,92.75mm)(48mm,92.75mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1889.197mil|Location2.X=1890.33mil|Location1.Y=3644.118mil|Location2.Y=3645.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1889.197mil|Location2.X=1890.33mil|Location1.Y=3644.118mil|Location2.Y=3645.252mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.005mm) Between Board Edge And Track (48mm,92.4mm)(48mm,92.75mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,172 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\PCB.PcbDoc
+Date     : 8/31/2024
+Time     : 4:17:39 PM
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.081mm) (Max=1mm) (Preferred=0.15mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNet('NetC11_2'))
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.076mm) (IsVia)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,84.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,86.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,86.45mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,87.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,87.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,88.45mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,88.95mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,88.95mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.44mm,90.45mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.4mm,91.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.4mm,91.8mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.5mm,83.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.5mm,84.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.699mm,86.956mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.9mm,91.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (43.9mm,91.8mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.75mm,91.215mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.875mm,83.425mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.925mm,88.5mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.9mm,86.95mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.9mm,87.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.9mm,89.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44.9mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44mm,83.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (44mm,84.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.25mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.475mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.475mm,90.325mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.5mm,86.075mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (45.875mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.1mm,84.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.275mm,90.325mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.713mm,86.077mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (46.987mm,87.013mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.25mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.475mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.496mm,83.35mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.5mm,83.785mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.5mm,84.885mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.675mm,86.9mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.875mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47.875mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47mm,83.2mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47mm,83.785mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (47mm,88.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.275mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.275mm,86.95mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.2mm,90.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.3mm,86.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.3mm,88.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.6mm,84.8mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.75mm,87mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48.9mm,89.6mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48mm,83.2mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (48mm,84.315mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.075mm,83.575mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.213mm,91.223mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.475mm,83.575mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.4mm,86.1mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.4mm,86.9mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.4mm,88.1mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.5mm,84.4mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.75mm,90mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (49.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (50.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (50.5mm,84.4mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (50.675mm,90.325mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (50.75mm,87mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (50.8mm,89.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.075mm,90.325mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.25mm,91.785mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,85.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,87.35mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,87.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,88.95mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,89.35mm) from Int2 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 5)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.65mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.75mm,91.215mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (51.7mm,83.4mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (52.2mm,86.55mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (52.2mm,91.05mm) from Top Layer to Int3 (Sign) (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (52.3mm,89.3mm) from Top Layer to Bottom Layer (Annular Ring=0.075mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,83.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,85.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,86.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,88.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,89.75mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+   Violation between Minimum Annular Ring: (0.075mm < 0.076mm) Via (53mm,91.25mm) from Int4 (Sign) to Bottom Layer (Annular Ring=0.075mm) On (Mid Layer 3)
+Rule Violations :97
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (Disabled)(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (46.125mm,82.325mm) on Top Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,83.75mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,85.25mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,86.75mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,88.25mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,89.75mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Arc (53mm,91.25mm) on Bottom Overlay And Board Edge 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Region (0 hole(s)) Top Layer 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (44.8mm,92.4mm)(44.8mm,92.75mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (44.8mm,92.75mm)(45.55mm,92.75mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (45.55mm,92.75mm)(45.55mm,93.2mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (45.55mm,93.2mm)(47.25mm,93.2mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (47.25mm,92.75mm)(47.25mm,93.2mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (47.25mm,92.75mm)(48mm,92.75mm) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.005mm) Between Board Edge And Track (48mm,92.4mm)(48mm,92.75mm) on Top Overlay 
+Rule Violations :15
+
+Processing Rule : Matched Lengths(Tolerance=1mm) (InDifferentialPair('USB'))
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 112
+Waived Violations : 0
+Time Elapsed        : 00:00:01
