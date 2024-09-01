@@ -1,0 +1,50 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PCB.GBR   8/31/2024  9:51:12 PM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Layer                               
+.gbr                Int1 (Sign)                             
+.gbr                Int2 (Sign)                             
+.gbr                Int3 (Sign)                             
+.gbr                Int4 (Sign)                             
+.gbr                Int5 (Sign)                             
+.gbr                Int6 (Sign)                             
+.gbr                Bottom Layer                            
+.gbr                Bottom Pad Master                       
+.gbr                Top Pad Master                          
+.gbr                Top Overlay                             
+.gbr                Bottom Overlay                          
+.gbr                Top Solder                              
+.gbr                Bottom Solder                           
+.gbr                Top Paste                               
+.gbr                Bottom Paste                            
+.gbr                Mechanical 1                            
+.gbr                Top Courtyard                           
+.gbr                Top 3D Body                             
+.gbr                Top Designator                          
+.gbr                Top Component Center                    
+.gbr                Mechanical 7                            
+.gbr                Mechanical 8                            
+.gbr                Top Assembly                            
+.gbr                Top Component Outline                   
+.gbr                Mechanical 13                           
+.gbr                Mechanical 15                           
+.gbr                Profile                                 
+.gbr                Non-plated through-hole drill file      
+.gbr                Plated through-hole drill file          
+.gbr                Blind or buried via drill file for drill pairs
+.gbr                Blind or buried via drill file for drill pairs
+.gbr                Blind or buried via drill file for drill pairs
+.gbr                Drill Drawing                           
+.gbr                Drill Drawing                           
+.gbr                Drill Drawing                           
+.gbr                Drill Drawing                           
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+.gbr                Drill Guide                             
+------------------------------------------------------------------------------------------

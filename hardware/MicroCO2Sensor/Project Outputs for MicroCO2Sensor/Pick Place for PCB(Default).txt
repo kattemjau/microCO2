@@ -1,0 +1,58 @@
+Altium Designer Pick and Place Locations
+C:\Users\Sindre\Downloads\microCO2\hardware\MicroCO2Sensor\Project Outputs for MicroCO2Sensor\Pick Place for PCB(Default).txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       31/08/24
+Time:       21:53
+Revision:   62d89dfd13c2e7e134ef2a9c34c0343ec9b755b9
+Variant:    Default
+Units used: mil
+
+Designator Comment                 Layer       Footprint                Center-X(mil) Center-Y(mil) Rotation Description                                      
+SW1        B3U-3000PM              TopLayer    FP-B3U-3000PM-MFG        1826.772      3588.583      0        "SWITCH TACTILE SPST-NO 0.05A 12V"               
+SS         DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3592.520      90       ""                                               
+SD1        DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3474.409      90       ""                                               
+R10        10K                     TopLayer    R0201                    1889.764      3330.709      270      "Resistor, Generic"                              
+R9         10K                     BottomLayer R0201                    1998.032      3602.362      90       "Resistor, Generic"                              
+R8         10K                     TopLayer    R0201                    1879.921      3366.142      0        "Resistor, Generic"                              
+R7         5.1K                    BottomLayer R0201                    1781.496      3602.362      90       "Resistor, Generic"                              
+Y1         ABM10AIG-12.000MHZ-2Z-T TopLayer    FP-ABM10AIG-MFG          1791.339      3316.929      90       "CRYSTAL 12.0000MHZ 10PF SMD"                    
+U3         AP2112K-3.3TRG1         TopLayer    FP-SOT25-IPC_C           1968.504      3336.614      270      "IC REG LINEAR 3.3V 600MA SOT25"                 
+C3         1uF                     TopLayer    C0402                    1978.347      3425.197      0        Capacitor                                        
+C2         1uF                     TopLayer    C0402                    1978.347      3454.724      0        Capacitor                                        
+SWDIO      DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3356.299      90       ""                                               
+SWCLK      DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3415.354      90       ""                                               
+RUN        DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3533.465      90       ""                                               
+R5         33R                     TopLayer    RES0402                  1919.291      3513.780      90       "Resistor, Generic"                              
+R1         1K                      TopLayer    R0201                    1870.079      3330.709      270      "Resistor, Generic"                              
+L3         3.3uH                   TopLayer    IND0805                  1971.975      3591.445      0        Inductor                                         
+GND        DNP                     BottomLayer TP_SMD_1.0mm             2086.614      3297.244      90       ""                                               
+C9         100nF                   BottomLayer C0201                    1978.347      3602.362      90       Capacitor                                        
+C12        100nF                   BottomLayer C0201                    1840.551      3602.362      90       Capacitor                                        
+C4         15pF                    TopLayer    C0201                    1850.394      3287.401      270      Capacitor                                        
+C5         15pF                    TopLayer    C0201                    1850.394      3330.709      270      Capacitor                                        
+C7         100nF                   BottomLayer C0201                    2017.717      3602.362      90       Capacitor                                        
+C17        4.7uF                   TopLayer    C0402                    1978.347      3513.780      0        Capacitor                                        
+C6         100nF                   BottomLayer C0201                    1919.291      3602.362      90       Capacitor                                        
+C15        4.7uF                   TopLayer    C0402                    1978.347      3484.252      0        Capacitor                                        
+C16        4.7uF                   TopLayer    C0402                    1978.347      3543.307      0        Capacitor                                        
+C18        4.7uF                   TopLayer    C0402                    1919.291      3444.882      270      Capacitor                                        
+C14        100nF                   BottomLayer C0201                    1879.921      3602.362      90       Capacitor                                        
+C8         100nF                   BottomLayer C0201                    1958.661      3602.362      90       Capacitor                                        
+C13        100nF                   BottomLayer C0201                    1860.236      3602.362      90       Capacitor                                        
+C11        100nF                   BottomLayer C0201                    1801.181      3602.362      90       Capacitor                                        
+C10        100nF                   BottomLayer C0201                    1938.976      3602.362      90       Capacitor                                        
+R6         22R                     TopLayer    R0201                    2047.244      3440.945      180      "Resistor, Generic"                              
+R2         4K7                     TopLayer    R0201                    1870.079      3287.402      270      "Resistor, Generic"                              
+R4         4K7                     TopLayer    R0201                    1889.764      3287.402      270      "Resistor, Generic"                              
+C20        100nF                   BottomLayer C0201                    2037.402      3602.362      270      Capacitor                                        
+C19        100nF                   BottomLayer C0201                    1820.866      3602.362      270      Capacitor                                        
+U1         RP2354A                 BottomLayer RP2354A                  1900.591      3423.228      180      "RP2354A: 30 GPIO, 7x7 QFN60, 2MB stacked flash" 
+L2         WS2812B-4020            TopLayer    WS2812B-4020-FOOTPRINT-1 2055.118      3357.283      270      "WS2812B based adressable led 90 deg 0402 mini"  
+L1         WS2812B-4020            TopLayer    WS2812B-4020-FOOTPRINT-1 2055.118      3534.449      270      "WS2812B based adressable led 90 deg 0402 mini"  
+U2         "CO2 Sensor"            TopLayer    STC31-C                  1822.835      3452.756      0        "CO2 accuracy of ±(0.2 - 2.0 vol%) @0-100 vol%"  
+R3         5.1K                    BottomLayer R0201                    1761.811      3602.362      90       "Resistor, Generic"                              
+P1         632712000011            TopLayer    632712000011             1715.165      3452.756      270      ""                                               
+C1         100nF                   BottomLayer C0201                    1899.606      3602.362      270      Capacitor                                        
